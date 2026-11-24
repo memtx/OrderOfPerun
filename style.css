@@ -1,0 +1,335 @@
+/* =========================================
+   1. ESPORT PALETA (uhlí + oranžová z loga)
+   ========================================= */
+:root {
+  --bg-black: #08090c;         /* Hlavička a patička */
+  --bg-dark: #0e1015;          /* Hlavní tmavé pozadí */
+  --bg-card: #151821;          /* Kartičky / sekce */
+  --bg-card-hover: #1c202c;
+
+  --text-main: #f8fafc;
+  --text-muted: #9ca3af;
+
+  --accent: #e08a1e;           /* Oranžovo-zlatá ze seker v logu */
+  --accent-bright: #f59e0b;
+  --border-subtle: rgba(255, 255, 255, 0.1);
+  --border-accent: rgba(224, 138, 30, 0.45);
+
+  --container-width: 1180px;
+}
+
+/* =========================================
+   2. RESET A ZÁKLAD
+   ========================================= */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+  color: var(--text-main);
+  background-color: var(--bg-dark);
+}
+
+.container {
+  width: min(92%, var(--container-width));
+  margin-inline: auto;
+}
+
+/* =========================================
+   3. HLAVIČKA A NAVIGACE
+   ========================================= */
+.site-header {
+  background-color: var(--bg-black);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  min-height: 76px;
+  padding-block: 0.75rem;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.85rem;
+  text-decoration: none;
+  color: var(--text-main);
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.brand-name {
+  font-size: 1.35rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.brand-sub {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: var(--accent);
+  text-transform: uppercase;
+  margin-top: 3px;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+  flex-wrap: wrap;
+}
+
+.nav-list a {
+  color: var(--text-main);
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding-block: 0.25rem;
+  border-bottom: 2px solid transparent;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.nav-list a:hover,
+.nav-list a:focus-visible {
+  color: var(--accent-bright);
+  border-bottom-color: var(--accent);
+}
+
+/* =========================================
+   4. HERO SEKCE
+   ========================================= */
+.hero {
+  position: relative;
+  background:
+    radial-gradient(circle at 72% 48%, rgba(224, 138, 30, 0.14) 0%, rgba(14, 16, 21, 0) 45%),
+    linear-gradient(180deg, #12151d 0%, var(--bg-dark) 100%);
+  min-height: calc(100vh - 76px);
+  display: flex;
+  align-items: center;
+  padding-block: 4rem;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.hero-inner {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  align-items: center;
+  gap: 3rem;
+}
+
+.hero-title {
+  font-size: clamp(2rem, 3.8vw, 3rem);
+  font-weight: 900;
+  line-height: 1.08;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  margin-bottom: 1.25rem;
+}
+
+.hero-lead {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  max-width: 50ch;
+  margin-bottom: 2rem;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.9rem 1.85rem;
+  border-radius: 3px;
+  font-weight: 800;
+  font-size: 0.88rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  transition: transform 0.15s ease, background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn-primary {
+  background-color: var(--accent);
+  color: var(--bg-black);
+}
+
+.btn-primary:hover {
+  background-color: var(--accent-bright);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  border: 1px solid var(--border-accent);
+  color: var(--text-main);
+}
+
+.btn-secondary:hover {
+  border-color: var(--accent-bright);
+  color: var(--accent-bright);
+}
+
+.hero-visual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* =========================================
+   5. OBSAHOVÉ SEKCE
+   ========================================= */
+.section {
+  padding-block: 4.5rem;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.section-light,
+.section-alt {
+  background-color: var(--bg-dark);
+}
+
+.section-alt {
+  background-color: #11141c;
+}
+
+.section h2 {
+  font-size: 1.75rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 1.15rem;
+  display: inline-block;
+}
+
+.section h2::after {
+  content: "";
+  display: block;
+  width: 64px;
+  height: 3px;
+  background-color: var(--accent);
+  margin-top: 0.45rem;
+}
+
+.section p {
+  max-width: 66ch;
+  color: var(--text-muted);
+  font-size: 1.02rem;
+}
+
+/* =========================================
+   6. PATIČKA
+   ========================================= */
+.site-footer {
+  background-color: var(--bg-black);
+  color: var(--text-muted);
+  padding-block: 2rem;
+  font-size: 0.88rem;
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* =========================================
+   7. KONTROLA VELIKOSTI LOGA (pojistka)
+   ========================================= */
+header img,
+header svg,
+.brand img,
+.brand svg,
+.brand-logo img,
+.brand-logo svg,
+.brand-logo-img {
+  width: 46px !important;
+  height: 46px !important;
+  max-width: 46px !important;
+  object-fit: contain;
+  display: block;
+}
+
+.hero img,
+.hero svg,
+.hero-logo img,
+.hero-logo svg {
+  width: 100% !important;
+  max-width: 420px !important;
+  height: auto !important;
+  object-fit: contain;
+  display: block;
+  filter: drop-shadow(0 18px 36px rgba(0, 0, 0, 0.65));
+}
+
+/* =========================================
+   8. RESPONZIVITA
+   ========================================= */
+@media (max-width: 860px) {
+  .header-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .hero {
+    min-height: auto;
+    padding-block: 3rem;
+  }
+
+  .hero-inner {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .hero-lead {
+    margin-inline: auto;
+  }
+
+  .hero-actions {
+    justify-content: center;
+  }
+
+  .hero-visual {
+    order: -1;
+  }
+
+  .hero img,
+  .hero svg,
+  .hero-logo img,
+  .hero-logo svg {
+    max-width: 290px !important;
+  }
+}
